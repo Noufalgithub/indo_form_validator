@@ -1,9 +1,9 @@
 name: indo_form_validator
 description: Production-ready form validation utilities for Indonesian applications. Supports phone numbers, NIK, NPWP, and email validation.
 version: 1.0.0
-homepage: https://github.com/yourusername/indo_form_validator
-repository: https://github.com/yourusername/indo_form_validator
-issue_tracker: https://github.com/yourusername/indo_form_validator/issues
+
+repository: https://github.com/Noufalgithub/indo_form_validator
+issue_tracker: https://github.com/Noufalgithub/indo_form_validator/issues
 
 environment:
   sdk: ^3.10.7
