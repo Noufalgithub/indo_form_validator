@@ -1,26 +1,22 @@
 # indo_form_validator
 
-[![pub package](https://img.shields.io/pub/v/indo_form_validator.svg)](https://pub.dev/packages/indo_form_validator)
-
-A lightweight, production-ready form validation library for Indonesian applications. Provides validators for phone numbers, NIK (Nomor Induk Kependudukan), NPWP (Nomor Pokok Wajib Pajak), and email addresses with support for custom error messages in Indonesian and English.
+A lightweight form validation library for Indonesian applications. Provides validators for phone numbers, NIK, NPWP, and email with bilingual error messages.
 
 ## Features
 
-✅ **Phone Number Validation** - Supports Indonesian formats (08xx, +62, 62)  
-✅ **NIK Validation** - 16-digit validation with optional region code checking  
-✅ **NPWP Validation** - 15-digit validation with formatted/non-formatted support  
-✅ **Email Validation** - RFC 5322 compliant  
-✅ **Bilingual Support** - Indonesian and English error messages  
-✅ **Null-Safe** - Full null safety support  
-✅ **Flutter Compatible** - Works seamlessly with `TextFormField`  
-✅ **Validator Chaining** - Combine multiple validators  
-✅ **Custom Validators** - Create your own validation logic  
-✅ **Strict Mode** - Optional enhanced validation rules  
-✅ **Zero Dependencies** - Pure Dart implementation
+- Phone number validation (Indonesian formats: 08xx, +62, 62)
+- NIK validation (16 digits with optional region code checking)
+- NPWP validation (15 digits with formatting support)
+- Email validation (RFC 5322 compliant)
+- Bilingual error messages (Indonesian and English)
+- Validator chaining and custom validators
+- Strict validation mode
+- Null-safe and zero dependencies
+- Direct Flutter Form integration
 
 ## Installation
 
-Add this to your package's `pubspec.yaml` file:
+Add to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
@@ -35,7 +31,7 @@ flutter pub get
 
 ## Usage
 
-### Basic Usage with Flutter Forms
+### Basic Form Validation
 
 ```dart
 import 'package:indo_form_validator/indo_form_validator.dart';
@@ -92,8 +88,6 @@ TextFormField(
 
 ### Validator Chaining
 
-Combine multiple validators:
-
 ```dart
 TextFormField(
   validator: IndoValidator.chain([
@@ -118,8 +112,6 @@ TextFormField(
 ```
 
 ### Standalone Validation
-
-Use validators outside of forms:
 
 ```dart
 // Using ValidationResult
@@ -175,7 +167,7 @@ print(formatted); // 12.345.678.9-012.345
 
 ### IndoValidator
 
-Main class providing convenient access to all validators.
+Main validator class providing convenient access to all validators.
 
 ```dart
 // Form validators (returns String? for FormField)
@@ -236,9 +228,7 @@ class ValidationResult {
 }
 ```
 
-## Examples
-
-### Complete Form Example
+## Complete Example
 
 ```dart
 class MyForm extends StatefulWidget {
@@ -286,35 +276,6 @@ class _MyFormState extends State<MyForm> {
 }
 ```
 
-### Advanced Usage
-
-```dart
-// Multiple validation with custom logic
-final validator = IndoValidator.chain([
-  IndoValidator.phone(config: ValidationConfig.english),
-  (value) {
-    if (value?.startsWith('0811') ?? false) {
-      return null; // Allow only specific operator
-    }
-    return 'Only 0811 numbers allowed';
-  },
-]);
-
-// Conditional validation
-String? conditionalValidator(String? value) {
-  if (someCondition) {
-    return IndoValidator.phone()(value);
-  }
-  return IndoValidator.email()(value);
-}
-
-// Custom error messages
-final customPhone = IndoValidator.custom(
-  PhoneValidator.isValid,
-  'Silakan masukkan nomor telepon yang valid',
-);
-```
-
 ## Testing
 
 Run tests:
@@ -323,16 +284,11 @@ Run tests:
 flutter test
 ```
 
-The package includes comprehensive unit tests covering:
-- Valid and invalid inputs
-- Edge cases
-- Error messages in both languages
-- Strict mode validation
-- Formatting utilities
+The package includes comprehensive unit tests covering valid and invalid inputs, edge cases, error messages in both languages, and strict mode validation.
 
 ## Contributing
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+Contributions are welcome. Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details.
 
 ## License
 
@@ -341,9 +297,3 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## Changelog
 
 See [CHANGELOG.md](CHANGELOG.md) for a list of changes.
-
-## Support
-
-If you find this package useful, please give it a ⭐ on [GitHub](https://github.com/yourusername/indo_form_validator)!
-
-For issues and feature requests, please file them on the [issue tracker](https://github.com/yourusername/indo_form_validator/issues).

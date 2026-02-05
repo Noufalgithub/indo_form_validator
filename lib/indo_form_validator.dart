@@ -1,8 +1,8 @@
-/// Indonesian Form Validator
-///
-/// A lightweight, production-ready form validation library for Indonesian applications.
-/// Provides validators for phone numbers, NIK, NPWP, and email with support for
-/// custom error messages in Indonesian and English.
+// Indonesian Form Validator
+//
+// A lightweight, production-ready form validation library for Indonesian applications.
+// Provides validators for phone numbers, NIK, NPWP, and email with support for
+// custom error messages in Indonesian and English.
 
 export 'src/indo_validator.dart';
 export 'src/validation_result.dart';

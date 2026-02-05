@@ -1,6 +1,6 @@
 # Quick Start Guide
 
-Get started with `indo_form_validator` in 5 minutes!
+Get started with `indo_form_validator` in 5 minutes.
 
 ## Installation
 
@@ -37,34 +37,26 @@ class MyForm extends StatelessWidget {
       key: _formKey,
       child: Column(
         children: [
-          // Phone Number
           TextFormField(
             decoration: InputDecoration(labelText: 'Phone'),
             validator: IndoValidator.phone(),
           ),
-          
-          // NIK
           TextFormField(
             decoration: InputDecoration(labelText: 'NIK'),
             validator: IndoValidator.nik(),
           ),
-          
-          // NPWP
           TextFormField(
             decoration: InputDecoration(labelText: 'NPWP'),
             validator: IndoValidator.npwp(),
           ),
-          
-          // Email
           TextFormField(
             decoration: InputDecoration(labelText: 'Email'),
             validator: IndoValidator.email(),
           ),
-          
           ElevatedButton(
             onPressed: () {
               if (_formKey.currentState!.validate()) {
-                // Form is valid!
+                // Form is valid
               }
             },
             child: Text('Submit'),
@@ -159,13 +151,3 @@ TextFormField(
 - [GitHub Issues](https://github.com/yourusername/indo_form_validator/issues)
 - [API Documentation](API.md)
 - [Examples](example/)
-
-## Tips
-
-✅ Use `ValidationConfig.english` for English messages  
-✅ Enable `strict` mode for production  
-✅ Chain validators for complex validation  
-✅ Use `isValid()` for quick boolean checks  
-✅ Use `ValidationResult` for detailed error info  
-
-That's it! You're ready to validate Indonesian forms. 🎉
